@@ -1,4 +1,4 @@
-# Projeto Energisa Faturamento Mato Grosso do Sul
+# Projeto Faturamento Energisa Mato Grosso do Sul
 
 Este repositório contém os scripts e fluxos de trabalho necessários para o processo de faturamento da Energisa MS.
 
