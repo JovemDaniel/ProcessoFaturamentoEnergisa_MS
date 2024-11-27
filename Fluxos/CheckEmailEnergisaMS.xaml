@@ -130,7 +130,7 @@
         <OutArgument x:TypeArguments="x:String">[strOutputPathMedicoesMS]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">C:\Users\luis.nascimento\Documents\Teste UI Path\FATURAMENTO_ENERGISAMS\MEDIÇÕES_MS</InArgument>
+        <InArgument x:TypeArguments="x:String">C:\Users\luis.nascimento\Documents\Teste UI Path\FATURAMENTO_ENERGISA\MEDIÇÕES\MEDIÇÕES MS</InArgument>
       </Assign.Value>
     </Assign>
     <ui:LogMessage DisplayName="Log Message - Checking if email arrived in Caixa de Entrada" sap:VirtualizedContainerService.HintSize="570,173" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Checando chegada de e-mail com medição de lote...&quot;]" />
