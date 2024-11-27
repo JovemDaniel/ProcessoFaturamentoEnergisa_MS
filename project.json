@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "24.10.6.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -46,7 +46,7 @@
     },
     "fileInfoCollection": [],
     "saveToCloud": false,
-    "cloudProjectUrl": "https://cloud.uipath.com/danievafttkf/studio_/designer/b2743c06-96b8-49e2-9f5c-a8bf562436ee"
+    "cloudProjectUrl": "https://cloud.uipath.com/danievafttkf/studio_/designer/c356c260-a4cf-440e-8ba5-8822e66bdeeb"
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
