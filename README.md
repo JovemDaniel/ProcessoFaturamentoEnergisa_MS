@@ -77,10 +77,7 @@ O objetivo deste projeto é automatizar o processo de faturamento da Energisa, d
 
 4. Execute a sequência principal (`Main.xaml`) para iniciar o processo de faturamento.
 
-## Contribuições
+## Desenvolvedor
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo `LICENSE`.
+**Daniel Nascimento**  
+[LinkedIn](https://www.linkedin.com/in/danieloliveirain/)
