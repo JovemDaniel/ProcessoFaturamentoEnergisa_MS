@@ -2,6 +2,8 @@
 
 Este repositório contém os scripts e fluxos de trabalho necessários para o processo de faturamento da Energisa MS.
 
+![image](https://github.com/user-attachments/assets/3136039c-3393-40de-a81e-395776c1b451)
+
 ## Visão Geral
 
 O objetivo deste projeto é automatizar o processo de faturamento da Energisa, desde a verificação de emails até a transmissão e monitoramento das faturas. O projeto é dividido em várias etapas, cada uma representada por um arquivo de workflow distinto.
@@ -63,6 +65,17 @@ O objetivo deste projeto é automatizar o processo de faturamento da Energisa, d
 ## Dependências
 
 - **UiPath**: Este projeto foi desenvolvido usando o UiPath. Certifique-se de ter o UiPath instalado e configurado adequadamente.
+  
+Este projeto utiliza os seguintes pacotes UiPath:
+
+- **UiPath.Excel.Activities**: 2.24.3 ou posterior
+- **UiPath.Mail.Activities**: 1.23.11 ou posterior
+- **UiPath.PDF.Activities**: 3.20.1 ou posterior
+- **UiPath.System.Activities**: 24.11.0 ou posterior
+- **UiPath.Testing.Activities**: 24.10.3 ou posterior
+- **UiPath.UIAutomation.Activities**: 24.11.1 ou posterior
+
+Certifique-se de que os pacotes estejam instalados e atualizados para evitar problemas de compatibilidade.
 
 ## Uso
 
