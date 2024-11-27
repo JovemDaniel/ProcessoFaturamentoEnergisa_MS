@@ -113,7 +113,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessDatainTOTVS" sap:VirtualizedContainerService.HintSize="1836,3962" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ProcessDatainTOTVS" sap:VirtualizedContainerService.HintSize="1836,3963" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strUserTOTVS" />
       <Variable x:TypeArguments="x:String" Name="strUserPasswordTOTVS" />
@@ -123,8 +123,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - Initializing ProcessDatainTOTVS workflow" sap:VirtualizedContainerService.HintSize="1060,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicializando ProcessDataInTOTVS.xaml...&quot;]" />
-    <Assign DisplayName="Assign - strUserTOTVS" sap:VirtualizedContainerService.HintSize="1060,113" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:LogMessage DisplayName="Log Message - Initializing LoginTOTVS.xaml" sap:VirtualizedContainerService.HintSize="1060,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicializando LoginTOTVS.xaml...&quot;]" />
+    <Assign DisplayName="Assign - strUserTOTVS" sap:VirtualizedContainerService.HintSize="1060,114" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strUserTOTVS]</OutArgument>
       </Assign.To>
@@ -213,7 +213,7 @@
                           </uix:TargetAnchorable>
                         </uix:NTypeInto.Target>
                       </uix:NTypeInto>
-                      <Delay DisplayName="Delay before click 'Entrar' to login" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="416,122" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                      <Delay DisplayName="Delay before 'Type into' to password" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="416,122" sap2010:WorkflowViewState.IdRef="Delay_6" />
                       <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="1" DisplayName="Type Into 'Insira sua senha' - strPasswordTOTVS" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="416,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="1310836a-dea3-435e-ac93-9783672b464d" Text="[strUserPasswordTOTVS]" Version="V4">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable CVScreenId="18779fef-7b01-48ce-a30b-45d89310bdb0" CvElementArea="723, 558, 455, 48" CvType="InputBox" DesignTimeRectangle="723, 558, 455, 48" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="efbca828-eeea-40fb-9dee-92e29c989c62" InformativeScreenshot="2c44ceb33aedd0af8b2e46a52082424b.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='smartclient.exe' cls='Qt626QWindowIcon' title='TOTVS Serviços (TOTVS) 02.9.0099 - Ver: 20.3.2.8' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
