@@ -114,7 +114,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CheckEmailEnergisaMS" sap:VirtualizedContainerService.HintSize="1836,1932" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CheckEmailEnergisaMS" sap:VirtualizedContainerService.HintSize="1836,1643" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="lstEmails" />
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="lstFilteredEmails" />
@@ -143,21 +143,21 @@
         <InArgument x:TypeArguments="scg:List(snm:MailMessage)">[lstEmails.Where(Function(mail) mail.Subject.ToUpper.Contains("AUTORIZAÇÃO DE FATURAMENTO - CONTRATO 2024004601 (ENERGISA MS)")).ToList()]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage in lstFilteredEmails" sap:VirtualizedContainerService.HintSize="570,1451" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[lstFilteredEmails]">
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage in lstFilteredEmails" sap:VirtualizedContainerService.HintSize="570,1162" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[lstFilteredEmails]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="currentMailMessage" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="536,1314" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="536,1025" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[lstFilteredEmails.Count &gt; 0]" DisplayName="If find email in lstFilteredEmails" sap:VirtualizedContainerService.HintSize="502,1254" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[lstFilteredEmails.Count &gt; 0]" DisplayName="If find email in lstFilteredEmails" sap:VirtualizedContainerService.HintSize="502,965" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,920" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,631" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="strMedicaoLoteMSFileName" />
                   </Sequence.Variables>
@@ -167,23 +167,14 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message - lstFilteredEmail found in 'Caixa de Entrada'" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Email encontrado: &quot; &amp; lstFilteredEmails(0).Subject]" />
-                  <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments for each currentMailMessage" ExcludeInlineAttachments="False" FolderPath="[strOutputPathMedicoesMS]" sap:VirtualizedContainerService.HintSize="434,120" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_3" Message="[currentMailMessage]" OverwriteExisting="False" />
-                  <Assign DisplayName="Assign to format file MedicaoLote name" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_5">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[strMedicaoLoteMSFileName]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[strOutputPathMedicoesMS &amp; "\" &amp; "MedicaoLoteMS_" &amp; Now.ToString("dd.MM.yy") &amp; ".pdf"]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:RenameFileX DisplayName="Rename File to strMedicaoLoteMSFileName" FilePath="[Directory.GetFiles(strOutputPathMedicoesMS, &quot;*.pdf&quot;)(0)]" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="RenameFileX_1" KeepExtension="True" NewName="[strMedicaoLoteMSFileName]" />
-                  <ui:LogMessage DisplayName="Log Message - File save in directory with new name" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Anexo de medição de lote da Energisa MS salvo em: &quot; &amp; strMedicaoLoteMSFileName]" />
+                  <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments for each currentMailMessage" ExcludeInlineAttachments="False" FolderPath="[strOutputPathMedicoesMS]" sap:VirtualizedContainerService.HintSize="434,120" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_3" Message="[currentMailMessage]" OverwriteExisting="True" />
+                  <ui:LogMessage DisplayName="Log Message - File save in directory with new name" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Anexo de medição de lote da Energisa MS salvo em: &quot; &amp; strOutputPathMedicoesMS]" />
                   <Assign DisplayName="Assign to argument out_strMedicaoLoteMsFileName" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_6">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[out_strMedicaoLoteMSFileName]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[strMedicaoLoteMSFileName]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[Directory.GetFiles(strOutputPathMedicoesMS, "*.pdf").OrderByDescending(Function(f) New FileInfo(f).CreationTime).FirstOrDefault()]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
