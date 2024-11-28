@@ -4,6 +4,7 @@
   "description": "**PRODUÇÃO*\r\n\r\nProcesso automatizado para gerenciamento e autorização de faturamento da Energisa MS. Realiza a identificação de e-mails específicos relacionados a contratos e medições, filtra e processa os dados relevantes, e salva anexos de PDFs em uma pasta definida com nomenclatura padronizada para facilitar o rastreamento e organização.",
   "main": "Main.xaml",
   "dependencies": {
+    "System.Diagnostics.Process": "[4.3.0]",
     "UiPath.Excel.Activities": "[2.24.3]",
     "UiPath.Mail.Activities": "[1.23.11]",
     "UiPath.PDF.Activities": "[3.20.1]",
