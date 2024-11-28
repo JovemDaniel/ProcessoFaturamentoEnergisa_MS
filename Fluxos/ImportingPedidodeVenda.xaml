@@ -129,7 +129,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessDataInTOTVS" sap:VirtualizedContainerService.HintSize="1836,14736" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ProcessDataInTOTVS" sap:VirtualizedContainerService.HintSize="1523,14696" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strCodeRPS" />
     </Sequence.Variables>
@@ -139,13 +139,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - Inicialization process ProcessDataInTOTVS" sap:VirtualizedContainerService.HintSize="1108,173" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Iniciando fluxo ProcessDataInTOTVS.xaml&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="TOTVS Serviços (TOTVS) 02.9.0099" sap:VirtualizedContainerService.HintSize="1108,13949" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e609ed5e-3b96-4cf9-ae16-596df4df1ec5" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="TOTVS Serviços (TOTVS) 02.9.0099" sap:VirtualizedContainerService.HintSize="1108,13909" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e609ed5e-3b96-4cf9-ae16-596df4df1ec5" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="1074,13626" sap2010:WorkflowViewState.IdRef="Sequence_24">
+          <Sequence sap:VirtualizedContainerService.HintSize="1074,13586" sap2010:WorkflowViewState.IdRef="Sequence_24">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="blnDisplayPedidodeVendaScreen" />
               <Variable x:TypeArguments="x:String" Name="strOrderTOTVSCompare" />
@@ -155,7 +155,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Bem vindo à home do faturamento' message" sap:VirtualizedContainerService.HintSize="1040,1441" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e609ed5e-3b96-4cf9-ae16-596df4df1ec5" Timeout="20" Version="V4">
+            <uix:NCheckState DisplayName="Check App State 'Bem vindo à home do faturamento' message" sap:VirtualizedContainerService.HintSize="1040,1401" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e609ed5e-3b96-4cf9-ae16-596df4df1ec5" Timeout="20" Version="V4">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Destino aparece" sap:VirtualizedContainerService.HintSize="450,1152" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
@@ -429,7 +429,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NCheckState DisplayName="Check App State 'Processamento terminado' message" sap:VirtualizedContainerService.HintSize="1040,914" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="e609ed5e-3b96-4cf9-ae16-596df4df1ec5" Timeout="60" Version="V4">
+            <uix:NCheckState DisplayName="Check App State 'Processamento terminado' message" sap:VirtualizedContainerService.HintSize="1040,914" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="e609ed5e-3b96-4cf9-ae16-596df4df1ec5" Timeout="40" Version="V4">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Destino aparece" sap:VirtualizedContainerService.HintSize="484,665" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>

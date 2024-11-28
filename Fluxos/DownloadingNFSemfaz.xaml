@@ -129,7 +129,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadingNFSemfaz" sap:VirtualizedContainerService.HintSize="1836,9451" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadingNFSemfaz" sap:VirtualizedContainerService.HintSize="1523,9451" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strSemfazURL" />
       <Variable x:TypeArguments="x:String" Name="strUserSemfaz" />
@@ -525,13 +525,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: consultaTalaoFiscalFiltro.jsf" sap:VirtualizedContainerService.HintSize="1022,1573" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="9b8349ad-a203-4968-933e-866a4979e1c1" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: consultaTalaoFiscalFiltro.jsf" sap:VirtualizedContainerService.HintSize="1022,1461" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="9b8349ad-a203-4968-933e-866a4979e1c1" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Fazer in consultaTalaoFiscalFiltro.jsf" sap:VirtualizedContainerService.HintSize="484,1324" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Fazer in consultaTalaoFiscalFiltro.jsf" sap:VirtualizedContainerService.HintSize="484,1212" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="strSourceNFPathExists" />
             </Sequence.Variables>
@@ -589,7 +589,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
             <ui:FileExistsX DisplayName="File Exists - strSourceNFPath to strSourceNFPathExists" Exists="[strSourceNFPathExists]" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[strSourceNFFilePath]" />
-            <If Condition="[strSourceNFPathExists = True]" DisplayName="If strSourceNFPathExist is equals True move file" sap:VirtualizedContainerService.HintSize="450,1040" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[strSourceNFPathExists = True]" DisplayName="If strSourceNFPathExist is equals True move file" sap:VirtualizedContainerService.HintSize="450,928" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -597,7 +597,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,704" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,592" sap2010:WorkflowViewState.IdRef="Sequence_15">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -605,8 +605,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message - Sucess in download NF" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Download de NFs concluído!&quot;]" />
                   <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[strDestinationNFFilePath]" DisplayName="Move File of strSourceNFPath to strDestinationNFPath" sap:VirtualizedContainerService.HintSize="382,191" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="True" Path="[strSourceNFFilePath]" />
-                  <ui:LogMessage DisplayName="Log Message - Talão moved to strDestinationNFPath" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Arquivo movido para destino armazenado em 'strDestinationNFPath'!&quot;]" />
-                  <ui:DeleteFileX DisplayName="Delete File talao.pdf file" sap:VirtualizedContainerService.HintSize="382,103" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[strDestinationNFFilePath]" />
+                  <ui:LogMessage DisplayName="Log Message - Talão moved to strDestinationNFPath" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Arquivo movido para destino armazenado em 'strDestinationNFPath'!&quot;]" />
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -635,22 +634,22 @@
     </uix:NApplicationCard>
     <upap:GetPDFPageCount DisplayName="Get PDF Page Count in strDestinationNFFilePath" FileName="[strDestinationNFFilePath]" sap:VirtualizedContainerService.HintSize="1022,114" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_1" PageCount="[intTotalPagesNFFile]" />
     <ui:LogMessage DisplayName="Log Message - Verify if talao.pdf contains in_strNFCode" sap:VirtualizedContainerService.HintSize="1022,173" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Verificando se arquivo talao.pdf contém NF idêntica ao código NF do Protheus...&quot;]" />
-    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each currentNumbercurrentNumberstrDestinationNFFilePath" sap:VirtualizedContainerService.HintSize="1022,1266" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(1, intTotalPagesNFFile)]">
+    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each currentNumbercurrentNumberstrDestinationNFFilePath" sap:VirtualizedContainerService.HintSize="1022,1378" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(1, intTotalPagesNFFile)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Int32">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="currentNumber" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Corpo in For Each strDestionationNFFilePath" sap:VirtualizedContainerService.HintSize="484,1129" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="Corpo in For Each strDestionationNFFilePath" sap:VirtualizedContainerService.HintSize="484,1241" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text in strDestinationNFFilePath" FileName="[strDestinationNFFilePath]" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[ReadPDFTextResult]" />
-            <If Condition="[ReadPDFTextResult.Contains(in_strNFCode)]" DisplayName="If talao.pdf contains in_strNFCode" sap:VirtualizedContainerService.HintSize="450,955" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[ReadPDFTextResult.Contains(in_strNFCode)]" DisplayName="If talao.pdf contains in_strNFCode" sap:VirtualizedContainerService.HintSize="450,1067" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,621" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,733" sap2010:WorkflowViewState.IdRef="Sequence_17">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -659,6 +658,7 @@
                   <ui:LogMessage DisplayName="Log Message - NF Code sucess found" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Código de NF foi encontrado no talao.PDF!&quot;]" />
                   <upap:ExtractPDFPageRange DisplayName="Extract PDF Page Range to strOutputNFFilePath" FileName="[strDestinationNFFilePath]" sap:VirtualizedContainerService.HintSize="382,167" sap2010:WorkflowViewState.IdRef="ExtractPDFPageRange_2" OutputFileName="[strOutputNFFilePath]" Range="[intTotalPagesNFFile.ToString]" />
                   <ui:LogMessage DisplayName="Log Message - NF name file" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;Arquivo foi salvo no nome: NF_&quot; &amp; in_strNFCode &amp; &quot;.pdf&quot;]" />
+                  <ui:DeleteFileX DisplayName="Delete File talao.pdf file" sap:VirtualizedContainerService.HintSize="382,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[strDestinationNFFilePath]" />
                   <ui:Break DisplayName="Break to finish loop" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="Break_1" />
                 </Sequence>
               </If.Then>

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="KillAllProcesses" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="KillAllProcesses_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="KillAllProcesses" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="KillAllProcesses_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System.Diagnostics.Process" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -104,32 +104,53 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="KillAllProcesses" sap:VirtualizedContainerService.HintSize="1853,778.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="KillAllProcesses" sap:VirtualizedContainerService.HintSize="1523,916" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sco:Collection(sd:Process)" Name="KillActiveProcess" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - Initializing KillAllProcess" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicalizando KillAllProcess.xaml&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Application: TOTVS Serviços (TOTVS) 02.9.0005 - Ver: 20.3.2.8" sap:VirtualizedContainerService.HintSize="450,544" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="c5a783ad-f37e-4c4d-b906-c214e75be7d3" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
+    <ui:LogMessage DisplayName="Log Message - Initializing KillAllProcess" sap:VirtualizedContainerService.HintSize="518,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicalizando KillAllProcess.xaml&quot;]" />
+    <ui:GetProcesses ContinueOnError="{x:Null}" DisplayName="Get Processes all process in KillAll.xaml" sap:VirtualizedContainerService.HintSize="518,57" sap2010:WorkflowViewState.IdRef="GetProcesses_1" Processes="[KillActiveProcess]" />
+    <ui:ForEach x:TypeArguments="sd:Process" CurrentIndex="{x:Null}" DisplayName="For Each process in Get Processes" sap:VirtualizedContainerService.HintSize="518,663" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[KillActiveProcess]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="sd:Process">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            <DelegateInArgument x:TypeArguments="sd:Process" Name="process" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="416,230" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="484,526" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log message - Closing Protheus" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Closing Protheus...&quot;]" />
+            <If Condition="[process.ProcessName = &quot;smartclient&quot; OR process.ProcessName = &quot;msedge&quot;]" DisplayName="If process.ProcessName is equal to 'smartclient' OR 'msedge'" sap:VirtualizedContainerService.HintSize="450,466" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,216" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" ProcessName="{x:Null}" DisplayName="Kill Process 'msedge' and 'smartclient'" sap:VirtualizedContainerService.HintSize="382,156" sap2010:WorkflowViewState.IdRef="KillProcess_1" Process="[process]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
           </Sequence>
         </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-8, -8, 1936, 1048" FilePath="C:\SmartClient_PRD\smartclient.exe" IconBase64="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" InformativeScreenshot="bd8f887a085224408514e89c5cd3b909.png" Selector="&lt;wnd app='smartclient.exe' cls='Qt626QWindowIcon' title='TOTVS Serviços (TOTVS) 02.9.0005 - Ver: 20.3.2.8' /&gt;" Title="TOTVS Serviços (TOTVS) 02.9.0005 - Ver: 20.3.2.8" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
+      </ui:ForEach.Body>
+    </ui:ForEach>
   </Sequence>
 </Activity>
