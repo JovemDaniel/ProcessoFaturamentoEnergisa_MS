@@ -116,7 +116,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetDataPDF" sap:VirtualizedContainerService.HintSize="1523,8249" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetDataPDF" sap:VirtualizedContainerService.HintSize="1836,8249" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_LayoutData" />
       <Variable x:TypeArguments="x:String" Name="strEnergisaExcelFilePath" />
@@ -197,7 +197,7 @@
               <OutArgument x:TypeArguments="x:String">[strMunicipalityPDF]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strDataPDF, "Município:\s*(\d+)").Groups(1).Value.Trim()]</InArgument>
+              <InArgument x:TypeArguments="x:String">02704</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_35">
