@@ -54,6 +54,17 @@
       <x:String>UiPath.Testing.Activities</x:String>
       <x:String>UiPath.PDF.Activities.PDF</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Mail.Activities.Utils</x:String>
+      <x:String>UiPath.Mail.Activities.Business.HtmlEditor</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -127,9 +138,12 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadingNFSemfaz" sap:VirtualizedContainerService.HintSize="1836,10557" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadingNFSemfaz" sap:VirtualizedContainerService.HintSize="1836,9835" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strSemfazURL" />
       <Variable x:TypeArguments="x:String" Name="strUserSemfaz" />
@@ -140,6 +154,7 @@
       <Variable x:TypeArguments="x:String" Name="ReadPDFTextResult" />
       <Variable x:TypeArguments="x:Int32" Name="intTotalPagesNFFile" />
       <Variable x:TypeArguments="x:String" Name="strOutputNFFilePath" />
+      <Variable x:TypeArguments="x:String" Name="EmailPassword" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -525,13 +540,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: consultaTalaoFiscalFiltro.jsf" sap:VirtualizedContainerService.HintSize="1022,2567" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="9b8349ad-a203-4968-933e-866a4979e1c1" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: consultaTalaoFiscalFiltro.jsf" sap:VirtualizedContainerService.HintSize="1022,1488" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="9b8349ad-a203-4968-933e-866a4979e1c1" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Fazer in consultaTalaoFiscalFiltro.jsf" sap:VirtualizedContainerService.HintSize="988,2318" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Fazer in consultaTalaoFiscalFiltro.jsf" sap:VirtualizedContainerService.HintSize="484,1239" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="strSourceNFPathExists" />
             </Sequence.Variables>
@@ -540,7 +555,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Save button' appers" sap:VirtualizedContainerService.HintSize="954,1163" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="9b8349ad-a203-4968-933e-866a4979e1c1" Version="V4">
+            <uix:NCheckState DisplayName="Check App State 'Save button' appers" sap:VirtualizedContainerService.HintSize="450,84" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="9b8349ad-a203-4968-933e-866a4979e1c1" Version="V4">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Destino aparece" sap:VirtualizedContainerService.HintSize="450,874" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
@@ -564,7 +579,7 @@
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://stm.semfaz.saoluis.ma.gov.br/sistematributario/jsp/consultaTalaoFiscal/consultaTalaoFiscalFiltro.jsf" CVScreenId="7cc89935-7adb-412b-9792-45c68d2e5333" CvTextArea="62, 222, 61, 12" CvTextArgument="Downloads" CvType="Text" DesignTimeRectangle="62, 222, 61, 12" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Controlar Host' cls='NamespaceTreeControl' title='Controle da Árvore de Namespace' /&gt;&lt;wnd ctrlid='100' title='Painel de navegação' /&gt;&lt;ctrl name='Downloads (fixo)' role='outline item' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Controlar Host' cls='NamespaceTreeControl' title='Controle da Árvore de Namespace' /&gt;&lt;wnd ctrlid='100' title='Painel de navegação' /&gt;&lt;ctrl name='Downloads (fixo)' role='outline item' automationid='' check:text='Downloads (fixo)' /&gt;" Guid="e5819b93-72c7-4c0b-9ed4-d38d0f981bc9" InformativeScreenshot="29f98b82465d74eb1a6f7c1bf1df08b2.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Salvar como' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target CVScreenId="7cc89935-7adb-412b-9792-45c68d2e5333" CvTextArea="36, 9, 67, 12" CvTextArgument="Salvar como" CvType="Text" DesignTimeRectangle="36, 9, 67, 12" ElementType="Text" Guid="4a535ffa-805f-42e2-874a-f4557c8cc7cf" SearchSteps="CV" TargetType="ComputerVisionBased" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -585,7 +600,7 @@
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://stm.semfaz.saoluis.ma.gov.br/sistematributario/jsp/consultaTalaoFiscal/consultaTalaoFiscalFiltro.jsf" CVScreenId="d106a700-2582-4393-941b-bfdd398fb732" CvElementArea="747, 489, 89, 26" CvTextArea="774, 495, 33, 13" CvTextArgument="Salvar" CvType="Button" DesignTimeRectangle="747, 489, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='1' title='Sa&amp;amp;lvar' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='Sa&amp;amp;lvar' check:text='Sa&amp;amp;lvar' /&gt;" Guid="8f06cc92-a8b9-46e1-965a-d3b599b9e077" InformativeScreenshot="2ae0aceaa54bde9e20f8359372ad4a70.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Salvar como' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target CVScreenId="d106a700-2582-4393-941b-bfdd398fb732" CvTextArea="190, 51, 61, 12" CvTextArgument="Downloads" CvType="Text" DesignTimeRectangle="152, 41, 499, 34" ElementType="Toolbar" FullSelectorArgument="&lt;wnd aaname='Carregando' cls='msctls_progress32' /&gt;&lt;wnd ctrlid='1001' title='Endereço: Downloads' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Carregando' cls='msctls_progress32' /&gt;&lt;wnd ctrlid='1001' title='Endereço: Downloads' check:text='Endereço: Downloads' /&gt;" Guid="90cdfe75-1a12-477d-8427-5198e7f147ff" SearchSteps="Selector, FuzzySelector, CV" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -625,13 +640,13 @@
               </uix:NCheckState.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <ui:FileExistsX DisplayName="File Exists - strSourceNFPath to strSourceNFPathExists" Exists="[strSourceNFPathExists]" sap:VirtualizedContainerService.HintSize="954,165" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[strSourceNFFilePath]" />
-            <If Condition="[strSourceNFPathExists = True]" DisplayName="If strSourceNFPathExist is equals True move file" sap:VirtualizedContainerService.HintSize="954,928" sap2010:WorkflowViewState.IdRef="If_1">
+            <ui:FileExistsX DisplayName="File Exists - strSourceNFPath to strSourceNFPathExists" Exists="[strSourceNFPathExists]" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[strSourceNFFilePath]" />
+            <If Condition="[strSourceNFPathExists = True]" DisplayName="If strSourceNFPathExist is equals True move file" sap:VirtualizedContainerService.HintSize="450,928" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -676,7 +691,7 @@
     </uix:NApplicationCard>
     <upap:GetPDFPageCount DisplayName="Get PDF Page Count in strDestinationNFFilePath" FileName="[strDestinationNFFilePath]" sap:VirtualizedContainerService.HintSize="1022,114" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_1" PageCount="[intTotalPagesNFFile]" />
     <ui:LogMessage DisplayName="Log Message - Verify if talao.pdf contains in_strNFCode" sap:VirtualizedContainerService.HintSize="1022,173" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Verificando se arquivo talao.pdf contém NF idêntica ao código NF do Protheus...&quot;]" />
-    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each currentNumbercurrentNumberstrDestinationNFFilePath" sap:VirtualizedContainerService.HintSize="1022,1378" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(1, intTotalPagesNFFile)]">
+    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each currentNumbercurrentNumberstrDestinationNFFilePath" sap:VirtualizedContainerService.HintSize="1022,1387" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(1, intTotalPagesNFFile)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Int32">
           <ActivityAction.Argument>
@@ -719,5 +734,15 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
+    <ui:GetPassword DisplayName="Get Password in email" sap:VirtualizedContainerService.HintSize="1022,57" sap2010:WorkflowViewState.IdRef="GetPassword_2" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAHszfuffpb0KeloyjfVzsHQAAAAACAAAAAAADZgAAwAAAABAAAAAP3qoJBQcvWXDS+afymnQdAAAAAASAAACgAAAAEAAAAKA44FpQUDPWzkv1CKGOYNUQAAAAennmViiEq6/mMLIbmm0i6RQAAACz3PNHW3D0ylv9LCV8pLqK2i6srA==" Result="[EmailPassword]" />
+    <ui:SendMail Bcc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="Olá,&#xD;&#xA;&#xD;&#xA;Este é um e-mail automático enviado pelo nosso robô.&#xD;&#xA;&#xD;&#xA;Gostaríamos de informar que a **Nota Fiscal foi processada com sucesso**. Em anexo, você encontra a NF gerada, pronta para ser conferida.&#xD;&#xA;&#xD;&#xA;Caso haja qualquer dúvida ou necessidade de ajustes, por favor, entre em contato.&#xD;&#xA;&#xD;&#xA;Agradecemos pela parceria!" Cc="daniel.nascimento@logos-ma.com.br" DisplayName="Send SMTP Mail Message - Sucess message" Email="daniel.nascimento@logos-ma.com.br" EnableSSL="True" sap:VirtualizedContainerService.HintSize="1022,291" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Password="[EmailPassword]" Port="465" SecureConnection="Auto" Server="email-ssl.com.br" Subject="[&quot; NF Processada com Sucesso &quot; &amp; in_strNFCode]" To="mayana.correa@logos-ma.com.br">
+      <ui:SendMail.Files>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+          <InArgument x:TypeArguments="x:String">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strOutputNFFilePath" />
+          </InArgument>
+        </scg:List>
+      </ui:SendMail.Files>
+    </ui:SendMail>
   </Sequence>
 </Activity>

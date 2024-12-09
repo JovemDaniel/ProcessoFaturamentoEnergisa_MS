@@ -7,6 +7,7 @@
     "System.Diagnostics.Process": "[4.3.0]",
     "UiPath.Excel.Activities": "[2.24.3]",
     "UiPath.Mail.Activities": "[1.23.11]",
+    "UiPath.MicrosoftOffice365.Activities": "[2.8.11-preview]",
     "UiPath.PDF.Activities": "[3.20.1]",
     "UiPath.System.Activities": "[24.11.0-preview]",
     "UiPath.Testing.Activities": "[24.10.3]",
@@ -16,7 +17,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "24.10.6.0",
-  "projectVersion": "1.0.1",
+  "projectVersion": "1.0.3",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
