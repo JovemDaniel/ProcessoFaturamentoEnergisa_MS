@@ -114,7 +114,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CheckEmailEnergisaMS" sap:VirtualizedContainerService.HintSize="1836,1643" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CheckEmailEnergisaMS" sap:VirtualizedContainerService.HintSize="1836,1593" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="lstEmails" />
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="lstFilteredEmails" />
@@ -125,7 +125,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Assign to declare path to save filtered PDF's" sap:VirtualizedContainerService.HintSize="570,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign DisplayName="Assign to declare path to save filtered PDF's" sap:VirtualizedContainerService.HintSize="506,113" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strOutputPathMedicoesMS]</OutArgument>
       </Assign.To>
@@ -133,9 +133,9 @@
         <InArgument x:TypeArguments="x:String">C:\Users\luis.nascimento\Documents\Teste UI Path\FATURAMENTO_ENERGISA\MEDIÇÕES\MEDIÇÕES MS</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message - Checking if email arrived in Caixa de Entrada" sap:VirtualizedContainerService.HintSize="570,173" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Checando chegada de e-mail com medição de lote...&quot;]" />
-    <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="daniel.nascimento@logos-ma.com.br" DisplayName="Get Outlook Mail Messages with Energisa MS in subject" GetAttachements="False" sap:VirtualizedContainerService.HintSize="570,57" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Caixa de Entrada" MarkAsRead="False" Messages="[lstEmails]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="1000" />
-    <Assign DisplayName="Assign to filter email ENERGISA MS" sap:VirtualizedContainerService.HintSize="570,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:LogMessage DisplayName="Log Message - Checking if email arrived in Caixa de Entrada" sap:VirtualizedContainerService.HintSize="506,173" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Checando chegada de e-mail com medição de lote...&quot;]" />
+    <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="daniel.nascimento@logos-ma.com.br" DisplayName="Get Outlook Mail Messages with Energisa MS in subject" GetAttachements="False" sap:VirtualizedContainerService.HintSize="506,57" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Caixa de Entrada" MarkAsRead="True" Messages="[lstEmails]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="1000" />
+    <Assign DisplayName="Assign to filter email ENERGISA MS" sap:VirtualizedContainerService.HintSize="506,113" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(snm:MailMessage)">[lstFilteredEmails]</OutArgument>
       </Assign.To>
@@ -143,19 +143,19 @@
         <InArgument x:TypeArguments="scg:List(snm:MailMessage)">[lstEmails.Where(Function(mail) mail.Subject.ToUpper.Contains("AUTORIZAÇÃO DE FATURAMENTO - CONTRATO 2024004601 (ENERGISA MS)")).ToList()]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage in lstFilteredEmails" sap:VirtualizedContainerService.HintSize="570,1162" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[lstFilteredEmails]">
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage in lstFilteredEmails" sap:VirtualizedContainerService.HintSize="506,1114" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[lstFilteredEmails]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="currentMailMessage" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="536,1025" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="504,993" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[lstFilteredEmails.Count &gt; 0]" DisplayName="If find email in lstFilteredEmails" sap:VirtualizedContainerService.HintSize="502,965" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[lstFilteredEmails.Count &gt; 0]" DisplayName="If find email in lstFilteredEmails" sap:VirtualizedContainerService.HintSize="470,933" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,631" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <Sequence.Variables>
