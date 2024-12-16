@@ -143,7 +143,7 @@
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadingNFSemfaz" sap:VirtualizedContainerService.HintSize="1836,9835" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadingNFSemfaz" sap:VirtualizedContainerService.HintSize="1836,9742" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strSemfazURL" />
       <Variable x:TypeArguments="x:String" Name="strUserSemfaz" />
@@ -691,20 +691,20 @@
     </uix:NApplicationCard>
     <upap:GetPDFPageCount DisplayName="Get PDF Page Count in strDestinationNFFilePath" FileName="[strDestinationNFFilePath]" sap:VirtualizedContainerService.HintSize="1022,114" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_1" PageCount="[intTotalPagesNFFile]" />
     <ui:LogMessage DisplayName="Log Message - Verify if talao.pdf contains in_strNFCode" sap:VirtualizedContainerService.HintSize="1022,173" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Verificando se arquivo talao.pdf contém NF idêntica ao código NF do Protheus...&quot;]" />
-    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each currentNumbercurrentNumberstrDestinationNFFilePath" sap:VirtualizedContainerService.HintSize="1022,1387" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(1, intTotalPagesNFFile)]">
+    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each currentNumbercurrentNumberstrDestinationNFFilePath" sap:VirtualizedContainerService.HintSize="1022,1339" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(1, intTotalPagesNFFile)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Int32">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="currentNumber" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Corpo in For Each strDestionationNFFilePath" sap:VirtualizedContainerService.HintSize="484,1241" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="Corpo in For Each strDestionationNFFilePath" sap:VirtualizedContainerService.HintSize="452,1209" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text in strDestinationNFFilePath" FileName="[strDestinationNFFilePath]" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[ReadPDFTextResult]" />
-            <If Condition="[ReadPDFTextResult.Contains(in_strNFCode)]" DisplayName="If talao.pdf contains in_strNFCode" sap:VirtualizedContainerService.HintSize="450,1067" sap2010:WorkflowViewState.IdRef="If_2">
+            <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text in strDestinationNFFilePath" FileName="[strDestinationNFFilePath]" sap:VirtualizedContainerService.HintSize="418,114" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[ReadPDFTextResult]" />
+            <If Condition="[ReadPDFTextResult.Contains(in_strNFCode)]" DisplayName="If talao.pdf contains in_strNFCode" sap:VirtualizedContainerService.HintSize="418,1035" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,733" sap2010:WorkflowViewState.IdRef="Sequence_17">
                   <sap:WorkflowViewStateService.ViewState>
@@ -735,12 +735,10 @@
       </ui:ForEach.Body>
     </ui:ForEach>
     <ui:GetPassword DisplayName="Get Password in email" sap:VirtualizedContainerService.HintSize="1022,57" sap2010:WorkflowViewState.IdRef="GetPassword_2" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAHszfuffpb0KeloyjfVzsHQAAAAACAAAAAAADZgAAwAAAABAAAAAP3qoJBQcvWXDS+afymnQdAAAAAASAAACgAAAAEAAAAKA44FpQUDPWzkv1CKGOYNUQAAAAennmViiEq6/mMLIbmm0i6RQAAACz3PNHW3D0ylv9LCV8pLqK2i6srA==" Result="[EmailPassword]" />
-    <ui:SendMail Bcc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="Olá,&#xD;&#xA;&#xD;&#xA;Este é um e-mail automático enviado pelo nosso robô.&#xD;&#xA;&#xD;&#xA;Gostaríamos de informar que a **Nota Fiscal foi processada com sucesso**. Em anexo, você encontra a NF gerada, pronta para ser conferida.&#xD;&#xA;&#xD;&#xA;Caso haja qualquer dúvida ou necessidade de ajustes, por favor, entre em contato.&#xD;&#xA;&#xD;&#xA;Agradecemos pela parceria!" Cc="daniel.nascimento@logos-ma.com.br" DisplayName="Send SMTP Mail Message - Sucess message" Email="daniel.nascimento@logos-ma.com.br" EnableSSL="True" sap:VirtualizedContainerService.HintSize="1022,291" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Password="[EmailPassword]" Port="465" SecureConnection="Auto" Server="email-ssl.com.br" Subject="[&quot; NF Processada com Sucesso &quot; &amp; in_strNFCode]" To="mayana.correa@logos-ma.com.br">
+    <ui:SendMail Bcc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Olá,&quot; &amp; vbLf &amp; vbLf &amp; _&#xD;&#xA;            &quot;Este é um e-mail automático enviado pelo nosso robô.&quot; &amp; vbLf &amp; vbLf &amp; _&#xD;&#xA;            &quot;Gostaríamos de informar que a Nota Fiscal foi processada com sucesso.&quot; &amp; vbLf &amp; vbLf &amp; _&#xD;&#xA;            &quot;Em anexo, você encontra a NF gerada, pronta para ser conferida.&quot; &amp; vbLf &amp; vbLf &amp; _&#xD;&#xA;            &quot;Caso haja qualquer dúvida ou necessidade de ajustes, por favor, entre em contato.&quot; &amp; vbLf &amp; vbLf &amp; _&#xD;&#xA;            &quot;Agradecemos pela parceria!&quot;]" Cc="daniel.nascimento@logos-ma.com.br" DisplayName="Send SMTP Mail Message - Sucess message" Email="daniel.nascimento@logos-ma.com.br" EnableSSL="True" sap:VirtualizedContainerService.HintSize="1022,246" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Password="[EmailPassword]" Port="465" SecureConnection="Auto" Server="email-ssl.com.br" Subject="[&quot; NF Processada com Sucesso &quot; &amp; in_strNFCode]" To="mayana.correa@logos-ma.com.br">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strOutputNFFilePath" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:String">[strOutputNFFilePath]</InArgument>
         </scg:List>
       </ui:SendMail.Files>
     </ui:SendMail>
